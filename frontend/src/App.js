@@ -51,11 +51,11 @@ function App() {
                 
     
                 <div className="mb-3 col-md-4 campoComentarios">
-                    <strong><i className="material-icons center">access_time</i>Comentário</strong>
+                    <strong><i className="material-icons center">comment</i>Comentário</strong>
                     <br />
                     <form onSubmit={e => enviaBack(e)}>
                         <textarea value={comentario} onChange={e => setComentario(e.target.value)} required className="form-control" id="comment" name="comment" rows="5"> </textarea>
-                        <button type="submit" className="btn btn-secondary btnCadastrar" id="cadastrar">
+                        <button type="submit" className="btn btn-success btnCadastrar" id="cadastrar">
                             Cadastrar
                         </button>
                     </form>
@@ -65,12 +65,12 @@ function App() {
     
                 <div className="mb-3 col-md-6 divComments" id="divComments">
                     <ul name="comentarios" id="comentarios" className="comentarios">
-                        <p>Comentários</p>
+                        <strong><i className="material-icons center">comment</i>Comentários</strong>
                         {
                             comentarios.map(item => (
                                 <div key={item.link}>
                                     <li className="comment">{item.conteudo}</li>                                
-                                    <button name="btnOuvir"className="btn btn-secondary btn-sm btnOuvir" onClick={() => ouvir(item.link)}>
+                                    <button name="btnOuvir"className="btn btn-success btn-sm btnOuvir" onClick={() => ouvir(item.link)}>
                                         Ouvir
                                     </button>
                                 </div>
